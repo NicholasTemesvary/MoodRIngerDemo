@@ -1,0 +1,101 @@
+import random,sys,time
+
+def print_slow(str):
+    for letter in str:
+        print(letter, end='')
+        time.sleep(.1)
+
+print_slow("Actiavting the Mood Ringer's Mood Sensing survey\n")
+
+pts_happy = 0
+pts_sad = 0
+pts_energized = 0
+pts_upset = 0
+pts_worried = 0
+pts_friendly = 0
+
+print_slow("Mood Ringer will ask you a series of questions which you can answer with the choices of Strongly Agree, Agree, Nuetral, Disagree, Strongly Disgaree\n") 
+
+while(1):
+    if (pts_happy >= 3):
+        print_slow("Today you may be feeling... ... ... ")
+        break
+    elif (pts_sad >= 3):
+        print_slow("Today you may be feeling... ... ... ")
+        break
+    elif (pts_energized >= 3):
+        print_slow("Today you may be feeling... ... ... ")
+        break
+    elif (pts_upset >= 3):
+        print_slow("Today you may be feeling... ... ... ")
+        break
+    elif (pts_worried >= 3):
+        print_slow("Today you may be feeling... ... ... ")
+        break
+    elif (pts_friendly >= 3):
+        print_slow("Today you may be feeling... ... ... ")
+        break
+    a = random.randrange(1,3)
+    if (a==1):
+        a = 0
+        print_slow("Question 1: Today has been a good day\n")
+        print("1. Strongly Agree")
+        print("2. Agree")
+        print("3. Nuetral")
+        print("4. Disagree")
+        print("5. Strongly Disagree")
+        n = input().strip()
+        if (n=="1"):
+            pts_happy + 2
+        elif(n=="2"):
+            pts_happy + 1
+        elif(n=="3"):
+            pts_happy + 0
+        elif(n=="4"):
+            pts_sad + 1
+        elif(n=="5"):
+            pts_sad +2
+        print(pts_happy)
+            
+    if (a==2):
+        a = 0
+        print_slow("Question 1: You feel like you have already helped someone today?\n")
+        print("1. Strongly Agree")
+        print("2. Agree")
+        print("3. Nuetral")
+        print("4. Disagree")
+        print("5. Strongly Disagree")
+        n = input().strip()
+        if (n=="1"):
+            pts_happy = pts_happy + 2
+        elif(n=="2"):
+            pts_happy = pts_happy + 1
+        elif(n=="3"):
+            pts_happy = pts_happy + 0
+        elif(n=="4"):
+            pts_sad = pts_sad + 1
+        elif(n=="5"):
+            pts_sad = pts_sad +2
+        print(pts_happy)
+
+    if (a==3):
+        a = 0
+        print_slow("Question 1: Today has been a good day\n")
+        print("1. Strongly Agree")
+        print("2. Agree")
+        print("3. Nuetral")
+        print("4. Disagree")
+        print("5. Strongly Disagree")
+        n = input().strip()
+        if (n=="1"):
+            pts_happy + 2
+        elif(n=="2"):
+            pts_happy + 1
+        elif(n=="3"):
+            pts_happy + 0
+        elif(n=="4"):
+            pts_sad + 1
+        elif(n=="5"):
+            pts_sad +2
+        print(pts_happy)
+
