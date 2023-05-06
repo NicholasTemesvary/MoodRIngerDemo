@@ -1,0 +1,450 @@
+import random,sys,time
+
+myfile = "w.dat"
+
+def print_slow(str):
+    for letter in str:
+        print(letter, end='')
+        time.sleep(.1)
+
+
+pts_happy = 0
+pts_sad = 0
+pts_energized = 0
+pts_upset = 0
+pts_worried = 0
+pts_friendly = 0
+pts_tired = 0
+pts_angry = 0
+pts_proud = 0
+pts_calm = 0
+
+
+print('Welcome to Mood Ringer, before you can access the survey, please login')
+zz = input('Please enter email: ')
+xx = input('Password: ')
+
+print(' ')
+print_slow('WELCOME TO MOOD RINGER')
+
+
+def print_menu():
+    print(' ')
+    print('1. Take Mood Ringer Survey')
+    print('2. View my Mood Stats')
+    print('3. Edit my Account Information')
+    print(' ')
+
+def main(pts_happy, pts_sad, pts_energized, pts_upset, pts_worried, pts_friendly, pts_tired, pts_angry, pts_proud, pts_calm):
+
+    while True:
+        print_menu()
+        choice = input('Enter menu choice: ')
+        print(' ')
+
+        if choice == '1':
+            print_slow("Actiavting the Mood Ringer's Mood Sensing survey\n")
+            print_slow("Mood Ringer will ask you a series of questions which you can answer with the choices of Strongly Agree, Agree, Nuetral, Disagree, Strongly Disgaree\n")
+
+            while(1):
+                if (pts_happy >= 5):
+                    print_slow("Today you may be feeling... ... ... Happy: ")
+                    print("You may have helped someone out or may be complimented today. Regardless, today is a day to be happy and spread that happiness to more people.")
+                    break
+                elif (pts_sad >= 5):
+                    print_slow("Today you may be feeling... ... ... Sad: ")
+                    print("You may not be feeling the best today, but that doesn't mean you can't look for a silver lining. It's important to find a way to improve your behavior.")
+                    break
+                elif (pts_energized >= 5):
+                    print_slow("Today you may be feeling... ... ... Energized: ")
+                    print("You may feel like you are unstopable today! This is the time to get any important work done because you have the motivation to do so.")
+                    break
+                elif (pts_upset >= 5):
+                    print_slow("Today you may be feeling... ... ... Upset: ")
+                    break
+                elif (pts_worried >= 5):
+                    print_slow("Today you may be feeling... ... ... Worried: ")
+                    print("You may not be the most outgoing right now... but thats ok. Many people dont need to always be ambitious, and you should pursue your passions when you feel ready")
+                    break
+                elif (pts_friendly >= 5):
+                    print_slow("Today you may be feeling... ... ... Friendly: ")
+                    print("You are feeling very friendly today and you should get out and enjoy the day. Talk with your friends and family and plan something or try to make new friends today.")
+                    break
+                elif (pts_tired >= 5):
+                    print_slow("Today you may be feeling... ... ... Tired: ")
+                    break
+                elif (pts_angry >= 5):
+                    print_slow("Today you may be feeling... ... ... Angry: ")
+                    print("You may be feeling frustrated and upset, but it's important to try and compose yourself. You may feel like you are ready to lash out at the smallest things, but remeber to always be a good person.")
+                    break
+                elif (pts_proud >= 5):
+                    print_slow("Today you may be feeling... ... ... Proud: ")
+                    print("You feel like you can do anything with the best effort. You feel proud in yourself and you should. It's important to take pride of the work you put out")
+                    break
+                elif (pts_calm >= 5):
+                    print_slow("Today you may be feeling... ... ... Calm: ")
+                    print("Calm. Today is a very calm day, where you aren't too worked up. Being calm is a great emotion to focus on because it promotes taking a step back and appreciating the world.")
+                    break
+                a = random.randrange(1,13)
+                if (a==1):
+                    a = 0
+                    print_slow("Today has been a good day\n")
+                    print("1. Strongly Agree")
+                    print("2. Agree")
+                    print("3. Nuetral")
+                    print("4. Disagree")
+                    print("5. Strongly Disagree")
+                    n = input().strip()
+                    if (n=="1"):
+                        pts_happy = pts_happy + 2
+                    elif(n=="2"):
+                        pts_happy = pts_happy + 1
+                    elif(n=="3"):
+                        pts_happy = pts_happy + 0
+                    elif(n=="4"):
+                        pts_sad = pts_sad + 1
+                    elif(n=="5"):
+                        pts_sad = pts_sad + 2
+
+
+                if (a==2):
+                    a = 0
+                    print_slow("You feel like you have already helped someone today?\n")
+                    print("1. Strongly Agree")
+                    print("2. Agree")
+                    print("3. Nuetral")
+                    print("4. Disagree")
+                    print("5. Strongly Disagree")
+                    n = input().strip()
+                    if (n=="1"):
+                        pts_happy = pts_happy + 2
+                    elif(n=="2"):
+                        pts_happy = pts_happy + 1
+                    elif(n=="3"):
+                        pts_happy = pts_happy + 0
+                    elif(n=="4"):
+                        pts_sad = pts_sad + 1
+                    elif(n=="5"):
+                        pts_sad = pts_sad + 2
+
+
+                if (a==3):
+                    a = 0
+                    print_slow("Did you try something new today?\n")
+                    print("1. Strongly Agree")
+                    print("2. Agree")
+                    print("3. Nuetral")
+                    print("4. Disagree")
+                    print("5. Strongly Disagree")
+                    n = input().strip()
+                    if (n=="1"):
+                        pts_happy = pts_happy + 1
+                        pts_friendly = pts_friendly + 1
+                    elif(n=="2"):
+                        pts_happy = pts_happy + 1
+                    elif(n=="3"):
+                        pts_sad = pts_sad + 0
+                    elif(n=="4"):
+                        pts_sad = pts_sad + 1
+                    elif(n=="5"):
+                        pts_sad = pts_sad + 2
+
+
+                if (a==4):
+                    a = 0
+                    print_slow("Did you do something good for someone today?\n")
+                    print("1. Strongly Agree")
+                    print("2. Agree")
+                    print("3. Nuetral")
+                    print("4. Disagree")
+                    print("5. Strongly Disagree")
+                    n = input().strip()
+                    if (n=="1"):
+                        pts_energized = pts_energized + 2
+                    elif(n=="2"):
+                        pts_energized = pts_energized + 1
+                    elif(n=="3"):
+                        pts_tired = pts_tired + 0
+                    elif(n=="4"):
+                        pts_sad = pts_sad + 1
+                        pts_tired = pts_tired + 1
+                    elif(n=="5"):
+                        pts_tired = pts_tired + 2
+
+
+                if (a==5):
+                    a = 0
+                    print_slow("Did you try your hardest today? Do you plan on doing so later in the day?\n")
+                    print("1. Strongly Agree")
+                    print("2. Agree")
+                    print("3. Nuetral")
+                    print("4. Disagree")
+                    print("5. Strongly Disagree")
+                    n = input().strip()
+                    if (n=="1"):
+                        pts_happy = pts_happy + 1
+                        pts_proud = pts_proud + 1
+                    elif(n=="2"):
+                        pts_proud = pts_proud + 1
+                    elif(n=="3"):
+                        pts_happy = pts_happy + 0
+                    elif(n=="4"):
+                        pts_sad = pts_sad + 1
+                    elif(n=="5"):
+                        pts_tired = pts_tired + 1
+                        pts_upset = pts_upset + 1
+
+
+                if (a==6):
+                    a = 0
+                    print_slow("Did something bad happen today?\n")
+                    print("1. Strongly Agree")
+                    print("2. Agree")
+                    print("3. Nuetral")
+                    print("4. Disagree")
+                    print("5. Strongly Disagree")
+                    n = input().strip()
+                    if (n=="1"):
+                        pts_sad  = pts_sad + 1
+                        pts_upset = pts_upset + 1
+                    elif(n=="2"):
+                        pts_sad = pts_sad + 1
+                    elif(n=="3"):
+                        pts_calm = pts_calm + 0
+                    elif(n=="4"):
+                        pts_calm = pts_calm + 1
+                    elif(n=="5"):
+                        pts_calm = pts_calm + 2
+
+
+                if (a==7):
+                    a = 0
+                    print_slow("Did you feel more positive after using MoodRinger today?\n")
+                    print("1. Strongly Agree")
+                    print("2. Agree")
+                    print("3. Nuetral")
+                    print("4. Disagree")
+                    print("5. Strongly Disagree")
+                    n = input().strip()
+                    if (n=="1"):
+                        pts_happy = pts_happy + 1
+                        pts_friendly = pts_friendly + 1
+                    elif(n=="2"):
+                        pts_happy = pts_happy + 1
+                    elif(n=="3"):
+                        pts_happy = pts_happy + 0
+                    elif(n=="4"):
+                        pts_sad = pts_sad + 1
+                    elif(n=="5"):
+                        pts_sad = pts_sad +2
+
+
+                if (a==8):
+                    a = 0
+                    print_slow("Were you social today?\n")
+                    print("1. Strongly Agree")
+                    print("2. Agree")
+                    print("3. Nuetral")
+                    print("4. Disagree")
+                    print("5. Strongly Disagree")
+                    n = input().strip()
+                    if (n=="1"):
+                        pts_energized = pts_energized + 2
+                    elif(n=="2"):
+                        pts_energized = pts_energized + 1
+                    elif(n=="3"):
+                        pts_happy = pts_happy + 0
+                    elif(n=="4"):
+                        pts_tired = pts_tired + 1
+                        pts_sad = pts_sad + 1
+                    elif(n=="5"):
+                        pts_tired = pts_tired + 2
+
+
+                if (a==9):
+                    a = 0
+                    print_slow("Did you eat something you like today?\n")
+                    print("1. Strongly Agree")
+                    print("2. Agree")
+                    print("3. Nuetral")
+                    print("4. Disagree")
+                    print("5. Strongly Disagree")
+                    n = input().strip()
+                    if (n=="1"):
+                        pts_happy = pts_happy + 2
+                        pts_energized = pts_energized + 1
+                    elif(n=="2"):
+                        pts_happy = pts_happy + 1
+                    elif(n=="3"):
+                        pts_happy = pts_happy + 0
+                    elif(n=="4"):
+                        pts_upset = pts_upset + 1
+                    elif(n=="5"):
+                        pts_angry = pts_angry + 1
+                        pts_upset = pts_upset + 1
+
+            
+                if (a==10):
+                    a = 0
+                    print_slow("Did you spend time outdoors or in nature today?\n")
+                    print("1. Strongly Agree")
+                    print("2. Agree")
+                    print("3. Nuetral")
+                    print("4. Disagree")
+                    print("5. Strongly Disagree")
+                    n = input().strip()
+                    if (n=="1"):
+                        pts_proud = pts_proud + 2
+                        pts_energized = pts_energized + 1
+                    elif(n=="2"):
+                        pts_proud = pts_proud + 1
+                    elif(n=="3"):
+                        pts_happy = pts_happy + 0
+                    elif(n=="4"):
+                        pts_tired = pts_tired + 1
+                    elif(n=="5"):
+                        pts_upset = pts_upset + 2
+
+
+                if (a==11):
+                    a = 0
+                    print_slow("Did you exercies or engage in physical activity today?\n")
+                    print("1. Strongly Agree")
+                    print("2. Agree")
+                    print("3. Nuetral")
+                    print("4. Disagree")
+                    print("5. Strongly Disagree")
+                    n = input().strip()
+                    if (n=="1"):
+                        pts_worried = pts_worried + 2
+                    elif(n=="2"):
+                        pts_worried = pts_worried + 1
+                    elif(n=="3"):
+                        pts_happy = pts_happy + 0
+                    elif(n=="4"):
+                        pts_calm = pts_calm + 1
+                    elif(n=="5"):
+                        pts_calm = pts_calm + 1
+                        pts_tired = pts_tired + 1
+
+
+                if (a==12):
+                    a = 0
+                    print_slow("Did you talk to your family/friends today?\n")
+                    print("1. Strongly Agree")
+                    print("2. Agree")
+                    print("3. Nuetral")
+                    print("4. Disagree")
+                    print("5. Strongly Disagree")
+                    n = input().strip()
+                    if (n=="1"):
+                        pts_proud = pts_proud + 2
+                    elif(n=="2"):
+                        pts_happy = pts_happy + 1
+                    elif(n=="3"):
+                        pts_happy = pts_happy + 0
+                    elif(n=="4"):
+                        pts_worried = pts_worried + 1
+                    elif(n=="5"):
+                        pts_worried = pts_worried + 2
+
+
+                if (a==13):
+                    a = 0
+                    print_slow("Did you participate in any hobbies today?\n")
+                    print("1. Strongly Agree")
+                    print("2. Agree")
+                    print("3. Nuetral")
+                    print("4. Disagree")
+                    print("5. Strongly Disagree")
+                    n = input().strip()
+                    if (n=="1"):
+                        pts_happy = pts_happy + 1
+                        pts_proud = pts_proud + 1
+                    elif(n=="2"):
+                        pts_proud = pts_proud + 1
+                    elif(n=="3"):
+                        pts_happy = pts_happy + 0
+                    elif(n=="4"):
+                        pts_worried = pts_worried + 1
+                    elif(n=="5"):
+                        pts_worried = pts_worried + 2
+
+
+        if choice == '2':
+            print('===MOOD RINGER STATS===')
+            print('Todays Stats:')
+            print("Happy: ",pts_happy)
+            print("Sad: ",pts_sad)
+            print("Energized: ",pts_energized)
+            print("Upset: ",pts_upset)
+            print("Worried: ",pts_worried)
+            print("Friendly: ",pts_friendly)
+            print("Tired: ",pts_tired)
+            print("Angry: ",pts_angry)
+            print("Proud: ",pts_proud)
+            print("Calm: ",pts_calm)
+            print(' ')
+            print('1. Import Stats')
+            print('2. Historical Stats')
+            print('3. Return to main menu select')
+            v = input()
+            if v == '1':
+                myfile = input("Enter data filename: ")
+                print_slow("Importing stats now!")
+            if v == '2':       
+                print('===MOOD RINGER HISTORICAL STATS===')
+                print('5/6/23')
+                print("Happy: ",pts_happy)
+                print("Sad: ",pts_sad)
+                print("Energized: ",pts_energized)
+                print("Upset: ",pts_upset)
+                print("Worried: ",pts_worried)
+                print("Friendly: ",pts_friendly)
+                print("Tired: ",pts_tired)
+                print("Angry: ",pts_angry)
+                print("Proud: ",pts_proud)
+                print("Calm: ",pts_calm)
+                print(' ')
+                print('5/4/23')
+                print("Happy: 4")
+                print("Sad: 3")
+                print("Energized: 2")
+                print("Upset: 4")
+                print("Worried: 2")
+                print("Friendly: 0")
+                print("Tired: 1")
+                print("Angry: 2")
+                print("Proud: 1")
+                print("Calm: 5")
+                print(' ')
+                print('5/2/23')
+                print("Happy: 5")
+                print("Sad: 2")
+                print("Energized: 2")
+                print("Upset: 3")
+                print("Worried: 3")
+                print("Friendly: 0")
+                print("Tired: 2")
+                print("Angry: 0")
+                print("Proud: 1")
+                print("Calm: 0")
+                print(' ')
+            if v == '3':
+                print_slow("Retruning to main menu")
+
+        if choice == '3':
+            FName = input('Enter first name: ')
+            LName = input('Enter last name: ')
+            Email = input('Enter email: ')
+            Password = input('Enter password :')
+            print('First Name: ', FName)
+            print('Last Name: ', LName)
+            print('Email: ', Email)
+            print('Password: ', Password)
+                             
+
+
+if __name__ == '__main__':
+    main(pts_happy, pts_sad, pts_energized, pts_upset, pts_worried, pts_friendly, pts_tired, pts_angry, pts_proud, pts_calm)
+
